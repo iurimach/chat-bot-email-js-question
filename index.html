@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+        emailjs.init("qzzOh0sv2Xmq_p0T-");
+        })();
+    </script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-window" id="chat-window">
+           
+            <div class="bot-message" onclick="handlePredefinedQuestion('workTime')">სამუშაო საათები ?</div>
+            <div class="bot-message" onclick="handlePredefinedQuestion('location')">ჩვენი მდებარეობა?</div>
+            <div class="bot-message" onclick="handlePredefinedQuestion('identity')">ჩვენ შესახებ ?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Enter a question">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="showSurveyForm()">მიწერე მეილზე</button>
+    </div>
+
+    <div class="survey-form-container" id="survey-form-container">
+        <div class="survey-form">
+            <h3>გაგზავნე კითხვა</h3>
+            <input type="text" id="survey-question" placeholder="Enter your question">
+            <input type="number" id="survey-number" placeholder="Enter your phone number">
+            <input type="email" id="survey-email" placeholder="Enter your email">
+            <button onclick="submitSurveyForm()">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>
